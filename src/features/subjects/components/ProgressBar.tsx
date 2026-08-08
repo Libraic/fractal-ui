@@ -15,14 +15,14 @@ export default function ProgressBar({ completed, total }: ProgressBarProps) {
       aria-valuemax={boundedTotal}
       aria-valuemin={0}
       aria-valuenow={boundedCompleted}
-      className="relative h-9 overflow-hidden rounded-md border border-[#3b3550] bg-[#1e1a29]"
+      className="relative h-9 overflow-hidden rounded-md border border-[var(--color-border)] bg-[var(--color-sidebar-background)] shadow-[var(--shadow-inset)]"
       role="progressbar"
     >
       <div
-        className="h-full rounded-md bg-linear-to-r from-[#7c3aed] via-[#8B5cf6] to-[#c084fc] transition-[width] duration-300 ease-out"
+        className="h-full rounded-md bg-linear-to-r from-[var(--color-accent-strong)] via-[var(--color-border-strong)] to-[var(--color-accent)] transition-[width] duration-300 ease-out"
         style={{ width: `${progressPercentage}%` }}
       />
-      <span className="absolute inset-0 flex items-center justify-center text-sm font-semibold text-[#f4f2ff]">
+      <span className="absolute inset-0 flex items-center justify-center text-sm font-semibold text-[var(--color-text)]">
         {boundedCompleted}/{boundedTotal}
       </span>
     </div>

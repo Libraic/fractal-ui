@@ -18,7 +18,7 @@ export function NavigationItems({ isCollapsed }: ElementProps) {
           className={({ isActive }) =>
             `flex h-11 items-center rounded-md px-3 text-sm font-medium transition
               ${isCollapsed ? 'justify-center' : 'gap-3'}
-              ${isActive ? 'bg-[#8b5cf6]/15 text-[#f4f2ff]' : 'text-[#b7b2cc] hover:bg-[#3b3550] hover:text-[#f4f2ff]'}`
+              ${isActive ? 'bg-[var(--color-accent-soft)] text-[var(--color-text)]' : 'text-[var(--color-text-muted)] hover:bg-[var(--color-surface-hover)] hover:text-[var(--color-text)]'}`
           }
           title={isCollapsed ? label : undefined}
         >

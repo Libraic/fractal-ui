@@ -2,7 +2,7 @@ import Subject from './Subject.tsx';
 
 export function Subjects() {
   return (
-    <section className="flex min-h-screen w-full flex-wrap items-center justify-center gap-10 bg-[#16131f] p-8 text-zinc-100">
+    <section className="flex min-h-screen w-full flex-wrap items-center justify-center gap-10 bg-[var(--color-background)] p-8 text-[var(--color-text)]">
       <Subject
         title="Algebră"
         description="Învață să rezolvi ecuații, inecuații, sisteme de ecuații și expresii algebrice"
