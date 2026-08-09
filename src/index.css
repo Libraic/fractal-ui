@@ -25,6 +25,7 @@
   --color-accent-strong: #504cc4;
   --color-accent-soft: rgb(91 86 214 / 0.24);
   --color-shadow: rgb(18 17 45 / 0.36);
+  --shadow-lower: 0 9px 18px rgb(17 16 45 / 0.38);
   --shadow-raised: 9px 9px 18px rgb(17 16 45 / 0.38), -7px -7px 16px rgb(73 71 126 / 0.18);
   --shadow-raised-strong: 14px 16px 30px rgb(17 16 45 / 0.46), -9px -9px 20px rgb(73 71 126 / 0.16);
   --shadow-inset: inset 4px 4px 9px rgb(17 16 45 / 0.38), inset -4px -4px 9px rgb(73 71 126 / 0.16);

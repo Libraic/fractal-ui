@@ -1,1 +1,2 @@
-export const COURSES = '/courses';
+export const COURSES = '/topics';
+export const PROBLEMS = '/problems';

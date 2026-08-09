@@ -1,8 +1,11 @@
-import { BookOpen } from 'lucide-react';
+import { BookOpen, ListChecks } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
-import { COURSES } from '../../../app/routes';
+import { COURSES, PROBLEMS } from '../../../app/routes';
 
-const navigationItems = [{ label: 'Cursuri', icon: BookOpen, path: COURSES }];
+const navigationItems = [
+  { label: 'Cursuri', icon: BookOpen, path: COURSES },
+  { label: 'Exerciții', icon: ListChecks, path: PROBLEMS },
+];
 
 type ElementProps = {
   isCollapsed: boolean;
@@ -18,7 +21,7 @@ export function NavigationItems({ isCollapsed }: ElementProps) {
           className={({ isActive }) =>
             `flex h-11 items-center rounded-md px-3 text-sm font-medium transition
               ${isCollapsed ? 'justify-center' : 'gap-3'}
-              ${isActive ? 'bg-[var(--color-accent-soft)] text-[var(--color-text)]' : 'text-[var(--color-text-muted)] hover:bg-[var(--color-surface-hover)] hover:text-[var(--color-text)]'}`
+              ${isActive ? 'bg-(--color-accent-soft) text-(--color-text)' : 'text-(--color-text-muted) hover:bg-(--color-surface-hover) hover:text-(--color-text)'}`
           }
           title={isCollapsed ? label : undefined}
         >
