@@ -12,10 +12,10 @@ import {
   DEFAULT_PROBLEM_SORTING_CRITERIA,
   ITEMS_PER_PAGE,
 } from '../../../shared/constants/constants';
-import type { GetProblemResponse, GetProblemsRequest } from '../types/problem.api.types';
+import type { GetProblemResponse, GetRequestParams } from '../types/problem.api.types';
 
 export async function getProblems(
-  params?: GetProblemsRequest,
+  params?: GetRequestParams,
   problemTitleStartsWith?: string,
 ): Promise<Result<GetPaginatedData<GetProblemResponse>, ApiError>> {
   const finalParams = params ?? {

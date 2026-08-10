@@ -88,7 +88,7 @@ src/
 ## Organization Principles
 
 * **app/** – Application bootstrap, routing, layouts, and global providers.
-* **features/** – Business domains (Subjects, Exercises, Authentication, etc.). Each feature owns its API, components, hooks, pages, and types.
+* **features/** – Business domains (TopicPage, Exercises, Authentication, etc.). Each feature owns its API, components, hooks, pages, and types.
 * **shared/** – Reusable UI components, utilities, hooks, icons, and shared types used across multiple features.
 * **services/** – Infrastructure code such as the HTTP client, local storage, authentication helpers, etc.
 * **assets/** – Static assets like images and fonts.

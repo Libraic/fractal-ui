@@ -8,7 +8,7 @@ export interface GetProblemResponse {
   createdAt: string;
 }
 
-export type GetProblemsRequest = {
+export type GetRequestParams = {
   page: number;
   size: number;
   sort: string;
