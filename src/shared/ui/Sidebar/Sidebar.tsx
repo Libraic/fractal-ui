@@ -10,9 +10,9 @@ export function Sidebar({ isCollapsed, onToggle }: SidebarProps) {
   return (
     <aside
       className={`
-        sticky top-0 h-screen shrink-0 overflow-hidden bg-[var(--color-sidebar-background)]
+        sticky top-0 h-screen shrink-0 overflow-hidden bg-(--color-sidebar-background)
         transition-[width] duration-300 ease-in-out
-        border-r border-r-[var(--color-border)]
+        border-r border-r-(--color-border)
         z-50
         ${isCollapsed ? 'w-20' : 'w-64'}
       `}

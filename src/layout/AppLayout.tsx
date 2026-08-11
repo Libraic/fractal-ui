@@ -6,7 +6,7 @@ export function AppLayout() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
 
   return (
-    <div className="flex min-h-screen bg-[var(--color-background)] text-[var(--color-text)]">
+    <div className="flex min-h-screen bg-(--color-background) text-(--color-text)">
       <Sidebar
         isCollapsed={isSidebarCollapsed}
         onToggle={() => setIsSidebarCollapsed((value) => !value)}

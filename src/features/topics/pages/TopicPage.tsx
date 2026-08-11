@@ -25,6 +25,7 @@ export function TopicPage() {
       {data.map((item) => (
         <Topic
           key={item.id}
+          topicId={item.id}
           title={item.title}
           description={item.description}
           completedExerciseCount={item.numberOfSolvedProblems}

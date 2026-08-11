@@ -10,13 +10,22 @@ import {
   DEFAULT_PROBLEM_SORTING_CRITERIA,
   ITEMS_PER_PAGE,
 } from '../../../shared/constants/constants';
+import { useParams } from 'react-router-dom';
 
 export function ProblemsPage() {
+  const { topicId } = useParams();
   async function fetchData(): Promise<Result<GetPaginatedData<GetProblemResponse>, ApiError>> {
     return getProblems({
       page: currentPage - 1,
       size: ITEMS_PER_PAGE,
       sort: DEFAULT_PROBLEM_SORTING_CRITERIA,
+      filters: [
+        {
+          field: 'topic.uuid',
+          operation: 'equals',
+          value: topicId!,
+        },
+      ],
     });
   }
 

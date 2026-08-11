@@ -1,3 +1,5 @@
+import type { SearchFilter } from '../../../shared/api/api.types.ts';
+
 export type ProblemDifficulty = 'Simplu' | 'Mediu' | 'Dificil';
 
 export interface GetProblemResponse {
@@ -12,4 +14,5 @@ export type GetRequestParams = {
   page: number;
   size: number;
   sort: string;
+  filters?: SearchFilter[];
 };

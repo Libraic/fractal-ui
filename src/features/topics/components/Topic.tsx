@@ -1,6 +1,9 @@
 import ProgressBar from './ProgressBar.tsx';
+import { useNavigate } from 'react-router-dom';
+import { getTopicProblemsPath } from '../../../app/routes.ts';
 
 type LearningCardProps = {
+  topicId: string;
   title: string;
   description: string;
   completedExerciseCount: number;
@@ -10,6 +13,7 @@ type LearningCardProps = {
 };
 
 export default function Topic({
+  topicId,
   title,
   description,
   completedExerciseCount,
@@ -17,8 +21,14 @@ export default function Topic({
   labels,
   icon,
 }: LearningCardProps) {
+  const navigate = useNavigate();
+  const problemsPath = getTopicProblemsPath(topicId);
+
   return (
     <article
+      role="link"
+      tabIndex={0}
+      onClick={() => navigate(problemsPath)}
       className="
           w-full max-w-90 group rounded-[18px]
           border border-(--color-border) bg-(--color-surface)
@@ -44,6 +54,8 @@ export default function Topic({
         <button
           type="button"
           aria-label={`More options for ${title}`}
+          onClick={(event) => event.stopPropagation()}
+          onKeyDown={(event) => event.stopPropagation()}
           className="
               rounded-lg px-2 py-1 text-xl text-(--color-text-subtle) shadow-(--shadow-raised)
               leading-none transition-colors
@@ -64,7 +76,10 @@ export default function Topic({
         </span>
         <div className="flex flex-row gap-x-2">
           {labels.map((label) => (
-            <span className="rounded-lg border border-(--color-border) bg-(--color-sidebar-background) px-3 py-1 text-(--color-text-muted) shadow-(--shadow-raised) text-[0.75rem]">
+            <span
+              key={label}
+              className="rounded-lg border border-(--color-border) bg-(--color-sidebar-background) px-3 py-1 text-(--color-text-muted) shadow-(--shadow-raised) text-[0.75rem]"
+            >
               {label}
             </span>
           ))}
