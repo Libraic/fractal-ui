@@ -64,7 +64,7 @@ export default function Topic({
         </span>
         <div className="flex flex-row gap-x-2">
           {labels.map((label) => (
-            <span className="rounded-full border border-(--color-border) bg-(--color-sidebar-background) px-3 py-1 text-(--color-text-muted) shadow-(--shadow-raised) text-[0.75rem]">
+            <span className="rounded-lg border border-(--color-border) bg-(--color-sidebar-background) px-3 py-1 text-(--color-text-muted) shadow-(--shadow-raised) text-[0.75rem]">
               {label}
             </span>
           ))}
