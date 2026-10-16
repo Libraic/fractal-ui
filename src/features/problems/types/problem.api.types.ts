@@ -10,6 +10,10 @@ export interface GetProblemResponse {
   createdAt: string;
 }
 
+export type GetProblemByIdResponse = {
+  title: string;
+};
+
 export type GetRequestParams = {
   page: number;
   size: number;

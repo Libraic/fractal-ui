@@ -19,3 +19,7 @@ export const getApiError = <T>(error: unknown): Result<T, ApiError> => {
     },
   };
 };
+
+export function getOkApiResponse<T>(data: T): Result<T, any> {
+  return { ok: true, data };
+}

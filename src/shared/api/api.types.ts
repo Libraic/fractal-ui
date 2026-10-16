@@ -8,6 +8,8 @@ export type ErrorType = 'VALIDATION' | 'GENERAL' | 'SYSTEM';
 
 export type Result<T, E> = { ok: true; data: T } | { ok: false; error: E };
 
+export type ApiResponse<T> = Promise<Result<T, ApiError>>;
+
 export type SearchFilterOperation = 'equals' | 'startsWith';
 
 export type SearchFilter = {

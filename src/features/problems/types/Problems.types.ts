@@ -7,3 +7,7 @@ export interface ProblemRecord {
   difficulty: ProblemDifficulty;
   prerequisites: string[];
 }
+
+export interface ProblemDefinition {
+  title?: string;
+}
