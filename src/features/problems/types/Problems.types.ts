@@ -1,4 +1,4 @@
-import type { ProblemDifficulty } from './problem.api.types';
+import type { Paragraph, ProblemDifficulty } from './problem.api.types';
 
 export interface ProblemRecord {
   id: string;
@@ -10,4 +10,5 @@ export interface ProblemRecord {
 
 export interface ProblemDefinition {
   title?: string;
+  paragraphs?: Paragraph[];
 }

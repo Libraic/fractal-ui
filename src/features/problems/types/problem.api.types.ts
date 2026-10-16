@@ -10,8 +10,25 @@ export interface GetProblemResponse {
   createdAt: string;
 }
 
+export enum BlockType {
+  Inline = 'inline',
+  Block = 'block',
+  Text = 'text',
+}
+
+export type Block = {
+  type: BlockType;
+  content: string;
+};
+
+export type Paragraph = {
+  blocks: Block[];
+};
+
 export type GetProblemByIdResponse = {
   title: string;
+  difficulty: string;
+  paragraphs: Paragraph[];
 };
 
 export type GetRequestParams = {
