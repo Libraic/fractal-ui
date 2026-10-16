@@ -10,5 +10,6 @@ export interface ProblemRecord {
 
 export interface ProblemDefinition {
   title?: string;
+  difficulty?: ProblemDifficulty;
   paragraphs?: Paragraph[];
 }

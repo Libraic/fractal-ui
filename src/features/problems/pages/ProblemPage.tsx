@@ -5,6 +5,7 @@ import type { ProblemDefinition } from '../types/Problems.types.ts';
 import { getProblemById } from '../api/problem.api.ts';
 import { Breadcrumbs } from '../../../shared/ui/Breadcrumbs/Breadcrumbs';
 import { COURSES, getTopicProblemsPath, PROBLEMS } from '../../../app/routes';
+import type { ProblemDifficulty } from '../types/problem.api.types';
 
 export function ProblemPage() {
   const { problemId, topicId } = useParams();
@@ -21,7 +22,11 @@ export function ProblemPage() {
         const response = await getProblemById(problemId);
         if (response.ok && !cancelled) {
           const data = response.data;
-          setProblem({ title: data.title, paragraphs: data.paragraphs });
+          setProblem({
+            title: data.title,
+            difficulty: data.difficulty as ProblemDifficulty,
+            paragraphs: data.paragraphs,
+          });
         }
       }
     };
