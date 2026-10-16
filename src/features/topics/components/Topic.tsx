@@ -1,6 +1,14 @@
 import ProgressBar from './ProgressBar.tsx';
 import { useNavigate } from 'react-router-dom';
 import { getTopicProblemsPath } from '../../../app/routes.ts';
+import { BookOpen, Variable } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+
+// Backend icon codes map to explicitly imported Lucide components.
+const topicIcons = new Map<string, LucideIcon>([
+  ['variable', Variable],
+  ['book-open', BookOpen],
+]);
 
 type LearningCardProps = {
   topicId: string;
@@ -23,6 +31,7 @@ export default function Topic({
 }: LearningCardProps) {
   const navigate = useNavigate();
   const problemsPath = getTopicProblemsPath(topicId);
+  const TopicIcon = topicIcons.get(icon) ?? BookOpen;
 
   return (
     <article
@@ -47,7 +56,7 @@ export default function Topic({
       <div className="flex items-start justify-between gap-4">
         <div className="flex items-center gap-3">
           <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-(--color-accent-soft) text-(--color-accent) shadow-(--shadow-raised)">
-            <span className="material-symbols-outlined text-xl">{icon}</span>
+            <TopicIcon className="size-5" aria-hidden="true" />
           </div>
           <h2 className="text-xl font-bold text-(--color-text)">{title}</h2>
         </div>
