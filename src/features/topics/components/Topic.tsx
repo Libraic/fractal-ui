@@ -28,7 +28,7 @@ export default function Topic({
     <article
       role="link"
       tabIndex={0}
-      onClick={() => navigate(problemsPath)}
+      onClick={() => navigate(problemsPath, { state: { topicTitle: title } })}
       className="
           w-full max-w-90 group rounded-[18px]
           border border-(--color-border) bg-(--color-surface)

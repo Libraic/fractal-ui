@@ -21,7 +21,7 @@ export function ProblemRow({ problem }: ProblemRowProps) {
         shadow-(--shadow-lower) transition
         hover:cursor-pointer
       "
-      onClick={() => navigate(problemPagePath)}
+      onClick={() => navigate(problemPagePath, { state: currentLocation.state })}
     >
       <td className="rounded-l-md px-6 py-3.5">
         <input
